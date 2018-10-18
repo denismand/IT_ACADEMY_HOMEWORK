@@ -1,0 +1,98 @@
+body {
+    width: 900px;
+    font-size: 20px;
+    margin: 0 auto;
+}
+.img {
+    text-align: center;
+}
+.main,
+header {
+    width: 700px;
+    margin: 0 auto;
+}
+.send {
+    font-size: 16px;
+}
+table {
+    width: 500px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px auto;
+}
+td {
+    border-top: 1px solid black;
+}
+
+/*Д/З* Трохи не зрозумів, що саме треба зробити:) тому зробив так/
+
+header h1 {
+    font-style: italic;
+}
+
+/*
+Селектор тега h1 можна записати:
+h1
+header h1
+(так як хедер у нас один, то продовжувати заглиблюватися напевно не треба)
+ */
+.main p > span.text-blue {
+    color: #0000FF;
+}
+.main p span {
+    color: green; /*Приклад пріорітетності селекторів і наслідування (порівняння з вищим селектором)*/
+}
+/*
+селектор класа text-blue можна записати:
+.text-blue
+span.text-blue
+p .text-blue
+.main p .text-blue
+і т.д
+ */
+section.main > p.img {
+    background-color: lightcyan;
+}
+/*
+Аналогічно класу text-blue, для тега p з класом img селектор задається:
+.img
+p.img
+.main .img
+...
+ */
+/*
+Ще можна скористатись селектором атрибуту
+ */
+[class] {
+    text-decoration: none;
+}
+[class].example-attributes {
+    text-decoration: line-through;
+}
+/*
+Для всіх тегів з атрибутом class, властивість text-decoration буде мати значення none.
+Для всіх тегів з атрибутом class, що мають значення example-attributes - line-through.
+ */
+#Matsuo {
+    color: black;
+}
+/*
+селектор id-а перекрив всі зміни кольору тексту (селектора .main p span)
+ */
+[for$="ent"] {
+    background-color: yellow;
+}
+/*закінчується на ent*/
+[class~="end"]{
+    background-color: aquamarine;
+}
+/*має значення end*/
+.head-table {
+    color: coral;
+}
+td + td {
+    color: red;
+}
+td:nth-child(2n+1) {
+    color: purple;
+}
