@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+body {
+    width: 900px;
+    font-size: 20px;
+    font-family: 'Karla', sans-serif;
+    text-align: justify;
+    margin: 0 auto;
+}
+.img {
+    text-align: center;
+}
+.main,
+header {
+    width: 700px;
+    margin: 0 auto;
+}
+.send {
+    font-size: 16px;
+}
+table {
+    width: 500px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px auto;
+}
+td {
+    border-top: 1px solid black;
+}
+h1 {
+    font-family: 'Oswald', sans-serif;
+}
+cite {
+    font-family: 'Indie Flower', cursive;
+}
