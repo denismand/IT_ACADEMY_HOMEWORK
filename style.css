@@ -1,22 +1,68 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald');
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 @import url('https://fonts.googleapis.com/css?family=Karla');
-
+* {
+    box-sizing: border-box;
+}
 body {
-    width: 900px;
     font-size: 20px;
     font-family: 'Karla', sans-serif;
     text-align: justify;
+}
+.body {
+    width: 1300px;
     margin: 0 auto;
+
+}
+main {
+    width: 900px;
+    margin: 0 auto;
+}
+.menu {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, yellow, deepskyblue);
+    opacity: 0.7;
+}
+.menu a {
+    border: 1px solid black;
+    border-left: none;
+    display: inline-block;
+    width: 20%;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 -2px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.menu a:nth-child(1) {
+    border-left: 1px solid black;
+    -webkit-border-radius: 10px 0 0 10px;
+    -moz-border-radius: 10px 0 0 10px;
+    border-radius: 10px 0 0 10px;
+}
+.menu a:nth-last-child(1) {
+    -webkit-border-radius: 0 10px 10px 0;
+    -moz-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;
+}
+.menu a:active {
+    background: linear-gradient(to top, red, deepskyblue);
+    color: white;
+}
+.title {
+    width: 900px;
+    margin: 80px auto 60px;
+    text-align: center;
 }
 .img {
     text-align: center;
 }
-.main,
-header {
-    width: 700px;
-    margin: 0 auto;
-}
+
 .send {
     font-size: 16px;
 }
@@ -35,3 +81,102 @@ h1 {
 cite {
     font-family: 'Indie Flower', cursive;
 }
+
+/*H/w*/
+/*Part 1*/
+.hw-block {
+    border: 1px solid black;
+    height: 100vh;
+    background: lightgray;
+    overflow: auto;
+    white-space: nowrap;
+    width: 100vw;
+    font-size: 16px;
+    counter-reset: column;
+}
+.column {
+    border: 1px solid red;
+    display: inline-block;
+    vertical-align: top;
+    background: lightsalmon;
+    width: 15vw;
+    height: 100vh;
+    overflow-x: auto;
+    counter-reset: cell;
+}
+.hw-block .column::before {
+     visibility: hidden;
+     counter-increment: column;
+     content: counters(column, '');
+     padding: 0 0 0 5px;
+ }
+.column .cell {
+    border: 1px solid yellow;
+    background: #a6e0ff;
+    overflow-x: scroll;
+    margin: 10px;
+    padding: 10px;
+}
+.cell::before {
+    counter-increment: cell;
+    content: 'Стовпчик ' counters(column,'') ' - Клітинка ' counters(cell,'');
+    padding: 5px;
+}
+
+.cell-size-1 {
+    height: 10vh;
+}
+.cell-size-2 {
+    height: 20vh;
+}
+.cell-size-3 {
+    height: 25vh;
+}
+.cell-size-4 {
+    height: 30vh;
+}
+/*Part 2*/
+
+
+.hw-block-2 {
+    width: 1300px;
+    margin: 0 auto;
+}
+.div-test {
+    position: relative;
+    background: rgba(0,0,0,0.4);
+    height: 100px;
+    width: 650px;
+    margin: 0 auto;
+}
+.div-test:before,
+.div-test:after {
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0,0.4);
+    content: '';
+    height: 100px;
+    width: 650px;
+    margin:0;
+    visibility: hidden;
+}
+.div-test:before {
+    left: -325px;
+}
+.div-test:after {
+    right: -325px;
+}
+.div-test:nth-child(2n+1):hover {
+    background: white;
+}
+.div-test:nth-child(2n+1):hover:before {
+    visibility: visible;
+}
+.div-test:nth-child(2n):hover {
+    background: white;
+}
+.div-test:nth-child(2n):hover:after {
+    visibility: visible;
+}
+/*Не знаю, чи це вірний метод... Але голову прийшлось поламати з цими псевдокласами :),
+ зате як все запрацювало був такий довольний як мала дитина)) */
