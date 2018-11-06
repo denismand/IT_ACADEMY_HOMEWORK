@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+}
+.box-animate {
+    position: relative;
+    border: 2px solid black;
+    height: 100%;
+}
+.box {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -100px 0 0 -100px;
+    height: 200px;
+    width: 200px;
+    animation-name: move;
+    padding: 50px;
+
+    z-index: 4;
+
+}
+.animate {
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.front,
+.back {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    font-size: 24px;
+}
+.front {
+    background: red;
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    animation-name: moveFront;
+}
+.back {
+    background: blue;
+    position: absolute;
+    left: 0;
+    z-index: 3;
+    animation-name: moveBack;
+}
+.back::before,
+.front::before {
+    content: '';
+}
+@keyframes move {
+    from {
+        transform: rotateY(360deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(0deg);
+    }
+
+
+}
+@keyframes moveFront {
+    from {
+        transform: rotateZ(360deg);
+    }
+    50% {
+        transform: rotateZ(180deg);
+    }
+    to {
+        transform: rotateZ(0deg);
+    }
+}
+@keyframes moveBack {
+    from {
+        transform: rotateZ(0deg);
+    }
+    50% {
+        transform: rotateZ(180deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
